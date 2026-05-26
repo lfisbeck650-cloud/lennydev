@@ -1,0 +1,232 @@
+:root {
+  --bg: #070b14;
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel-strong: rgba(255, 255, 255, 0.08);
+  --text: #f4f7fb;
+  --muted: rgba(244, 247, 251, 0.72);
+  --line: rgba(255, 255, 255, 0.10);
+  --accent: #7dd3fc;
+  --accent-2: #c084fc;
+  --radius: 24px;
+  --max: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(125, 211, 252, 0.12), transparent 30%),
+    radial-gradient(circle at right, rgba(192, 132, 252, 0.10), transparent 25%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: rgba(7, 11, 20, 0.72);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+nav {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+.hero,
+.page {
+  padding: 4rem 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  line-height: 1.05;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.lead {
+  max-width: 65ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-top: 1rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  transition: 0.2s ease;
+}
+
+.btn.primary {
+  background: #fff;
+  color: #05070c;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.btn.secondary {
+  background: var(--panel);
+  color: var(--text);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  background: var(--panel-strong);
+}
+
+.hero-card,
+.card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.24);
+}
+
+.hero-card ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.section {
+  padding: 1rem 0 4rem;
+}
+
+.section-heading {
+  margin-bottom: 1.25rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.page .card + .card {
+  margin-top: 1rem;
+}
+
+.donation .mono {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid var(--line);
+  overflow-wrap: anywhere;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: rgba(244, 247, 251, 0.84);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.footer-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(244, 247, 251, 0.55);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0;
+  }
+}
